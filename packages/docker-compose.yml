@@ -1,0 +1,12 @@
+version: '3'
+services:
+  client:
+    build: ./client
+    ports:
+      - 8083:8083
+  server:
+    build: ./server
+    volumes:
+      - ./server:/app
+    ports:
+      - 8084:8084
