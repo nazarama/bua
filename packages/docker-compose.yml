@@ -4,9 +4,20 @@ services:
     build: ./client
     ports:
       - 8083:8083
+    networks:
+      - mynetwork
+  mongo:
+    build: ./mongo
+    ports:
+      - 27017:27017
+    networks:
+      - mynetwork
   server:
     build: ./server
-    volumes:
-      - ./server:/app
     ports:
       - 8084:8084
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
