@@ -3,7 +3,7 @@ services:
   client:
     build: ./client
     ports:
-      - 8083:8083
+      - 80:80
     networks:
       - mynetwork
   mongo:
