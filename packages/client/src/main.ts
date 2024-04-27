@@ -21,6 +21,9 @@ import FileUpload from 'primevue/fileupload';
 import Fieldset from 'primevue/fieldset';
 import CheckBox  from 'primevue/checkbox';
 
+import MultiSelect from 'primevue/multiselect';
+
+
 import "primevue/resources/themes/md-dark-indigo/theme.css"       //theme
 import "primevue/resources/primevue.min.css"                 //core css
 import "primeicons/primeicons.css"                           //icons
@@ -53,6 +56,8 @@ import CompNavigation from "./components/CompNavigation.vue"
 import CompGallery from "./components/CompGallery.vue"
 
 import ProgressSpinner from 'primevue/progressspinner';
+import Accordion from "primevue/accordion";
+import AccordionTab from 'primevue/accordiontab';
 
 // AIzaSyBvLv4wX12wj7AixpSZaErrbm6HX-kleXw
 
@@ -105,5 +110,8 @@ app.component("PrimeSideBar", Sidebar);
 app.component("PrimeFileUpload", FileUpload);
 app.component("PrimeToast", Toast);
 app.component("PrimePaginator", Paginator);
+app.component("PrimeAccordion", Accordion);
+app.component("PrimeAccordionTab", AccordionTab);
+app.component("PrimeMultiSelect", MultiSelect);
 app.mount("#app");
 
