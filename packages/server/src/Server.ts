@@ -1,3 +1,4 @@
+
 import {PlatformApplication} from "@tsed/common";
 import {Inject} from "@tsed/di";
 import "@tsed/platform-express";
@@ -18,6 +19,7 @@ import { EventController } from "./controllers/EventController";
 import { UploadController } from "./controllers/ImageController";
 import { PodcastController } from "./controllers/PodcastController";
 import { LineupController } from "./controllers/LineUpController";
+import { isProduction } from "./config/env";
 
 
 const rootDir = __dirname;
