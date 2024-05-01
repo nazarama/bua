@@ -17,7 +17,7 @@ import { ClubController } from "./controllers/ClubController";
 import { EventController } from "./controllers/EventController";
 import { UploadController } from "./controllers/ImageController";
 import { PodcastController } from "./controllers/PodcastController";
-import { LineupController } from "./controllers/LineUpController";
+import { LineupController } from "./controllers/LineupController";
 
 
 const rootDir = __dirname;
