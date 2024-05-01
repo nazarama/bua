@@ -2,7 +2,7 @@
     "name": "@project/server",
     "version": "1.0.0",
     "description": "Here an example to configure your server and how to create your first controller.",
-    "main": "src/index.js",
+    "main": "./dist/index.js",
     "engines": {
         "node": ">=16.x"
     },
