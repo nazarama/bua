@@ -152,6 +152,12 @@ export default defineComponent({
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
+  font-size: 7.5vw;
+}
+@media (max-width: 375px) {
+  .caption {
+    font-size: 8.5vw;
+  }
 }
 .topleft {
   order: 1;

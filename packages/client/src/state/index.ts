@@ -207,7 +207,7 @@ export default reactive({
   releaseEvent() {
     this.resultForEvent = [];
     this.resultLineup = {};
-    this.event = { club: null, desc: null, name: null, flyer: null, fb: null };
+    this.event = { club: null, desc: null, name: null, flyer: null, fb: null, ra: null };
   },
   //TODO dotypuj to
   async addEvent(event: any) {

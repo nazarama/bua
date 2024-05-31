@@ -228,6 +228,12 @@ export default defineComponent({
   color: #ff3d00;
   font-size: 5pc;
 }
+/* Optional: Make the text responsive */
+@media screen and (max-width: 600px) {
+  .event_name {
+    font-size: 3.3rem;
+  }
+}
 
 .white-text-content {
   white-space: pre-wrap;

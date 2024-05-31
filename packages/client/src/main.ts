@@ -59,6 +59,8 @@ import ProgressSpinner from 'primevue/progressspinner';
 import Accordion from "primevue/accordion";
 import AccordionTab from 'primevue/accordiontab';
 
+import VirtualScroller from 'primevue/virtualscroller';
+
 // AIzaSyBvLv4wX12wj7AixpSZaErrbm6HX-kleXw
 
 
@@ -75,7 +77,8 @@ app.use(PrimeVue);
 
 app.use(VueGoogleMaps, {load: { key: 'AIzaSyBvLv4wX12wj7AixpSZaErrbm6HX-kleXw',}});
 
-app.component("PrimeProgressSpinner", ProgressSpinner)
+app.component("VirtualScroller", VirtualScroller);
+app.component("PrimeProgressSpinner", ProgressSpinner);
 app.component("PrimeFieldSet", Fieldset);
 app.component("PrimeButton", Button);
 app.component("PrimeDataTable", DataTable);

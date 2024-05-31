@@ -194,6 +194,7 @@ export default defineComponent({
                 image: newId,
                 description: this.eventInfo.description,
                 fb: this.eventInfo.fb,
+                ra: this.eventInfo.ra,
                 promoter: "admim",
                 top: this.eventInfo.top,
                 topimage:newId2
