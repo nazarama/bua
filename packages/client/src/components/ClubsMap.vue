@@ -388,7 +388,6 @@ function f(x: Color) {
   }
 }
 function fixDate(d: Date) {
-    console.log("tu", d);
   return (
     moment(d).format("ddd") +
     "." +

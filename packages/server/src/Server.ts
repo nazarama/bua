@@ -1,3 +1,4 @@
+
 import {PlatformApplication} from "@tsed/common";
 import {Inject} from "@tsed/di";
 import "@tsed/platform-express";
@@ -17,6 +18,8 @@ import { ClubController } from "./controllers/ClubController";
 import { EventController } from "./controllers/EventController";
 import { UploadController } from "./controllers/ImageController";
 import { PodcastController } from "./controllers/PodcastController";
+import { LineupController } from "./controllers/LineUpController";
+import { isProduction } from "./config/env";
 
 
 const rootDir = __dirname;
@@ -54,7 +57,7 @@ const clientDir = path.join(rootDir, "../../client/dist");
     "/api": [
       `${rootDir}/controllers/**/*.ts` // Automatic Import, /!\ doesn't works with webpack/jest, use  require.context() or manual import instead
     ],
-   "/manual": [ClubController, EventController,UploadController, PodcastController]
+   "/manual": [ClubController, EventController,UploadController, PodcastController, LineupController]
   },
   // mount: { //from old code
   //   "/api": [`${rootDir}/controllers/**/*.ts`]
