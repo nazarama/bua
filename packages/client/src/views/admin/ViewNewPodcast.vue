@@ -44,82 +44,83 @@
 <!--        button.p-button-text(label='No', icon='pi pi-times')-->
 <!--        button(label='Yes', icon='pi pi-check', autofocus='')-->
 
-PrimeDialog.p-fluid(v-model:visible='display', :style="{width: '450px'}", header='Event', :modal='true')
-    .p-field
-        PrimeLabel(for='') Name
-        PrimeInputText#name(v-model.trim='eventInfo.name', required='true', autofocus='')
-        small.p-error() Name is required.
-    .p-field
-        PrimeLabel(for='') Description
-        PrimeTextArea#description(v-model='eventInfo.description', required='true', rows='3', cols='20')
-    .p-field
-        PrimeLabel(for='') FB link
-        PrimeInputText#fblink(v-model='eventInfo.fb', required='true', autofocus='')
-    .p-field
-        PrimeLabel(for="") Club
-        PrimeDropDown(v-model="eventInfo.club" :options="state.clubs" optionLabel="name")
-    .p-field
-        PrimeLabel(for="icon") From
-        PrimeCalendar#icon(v-model="eventInfo.from", :showIcon="true")
-        PrimeLabel(for="icon") To
-        PrimeCalendar#icon(v-model="eventInfo.to", :showIcon="true")
+//- PrimeDialog.p-fluid(v-model:visible='display', :style="{width: '450px'}", header='Event', :modal='true')
+//-     .p-field
+//-         PrimeLabel(for='') Name
+//-         PrimeInputText#name(v-model.trim='eventInfo.name', required='true', autofocus='')
+//-         small.p-error() Name is required.
+//-     .p-field
+//-         PrimeLabel(for='') Description
+//-         PrimeTextArea#description(v-model='eventInfo.description', required='true', rows='3', cols='20')
+//-     .p-field
+//-         PrimeLabel(for='') FB link
+//-         PrimeInputText#fblink(v-model='eventInfo.fb', required='true', autofocus='')
+//-     .p-field
+//-         PrimeLabel(for="") Club
+//-         PrimeDropDown(v-model="eventInfo.club" :options="state.clubs" optionLabel="name")
+//-     .p-field
+//-         PrimeLabel(for="icon") From
+//-         PrimeCalendar#icon(v-model="eventInfo.from", :showIcon="true")
+//-         PrimeLabel(for="icon") To
+//-         PrimeCalendar#icon(v-model="eventInfo.to", :showIcon="true")
 
-    .p-field
-        PrimeFileUpload(name='image',:customUpload="true" @uploader="uploadImage"  @select="onSelectEvent" :multiple='true', accept='image/*', :maxfilesize='1000000')
-            template(#empty='')
-                p Drag and drop files to here to upload
-    .p-field
-        p {{eventInfo}}
-         img(:src="img")
-    .p-field 
-        PrimeCheckBox(inputId="binary", v-model="eventInfo.top", :binary="true")     
+//-     .p-field
+//-         PrimeFileUpload(name='image',:customUpload="true" @uploader="uploadImage"  @select="onSelectEvent" :multiple='true', accept='image/*', :maxfilesize='1000000')
+//-             template(#empty='')
+//-                 p Drag and drop files to here to upload
+//-     .p-field
+//-         p {{eventInfo}}
+//-          img(:src="img")
+//-     .p-field 
+//-         PrimeCheckBox(inputId="binary", v-model="eventInfo.top", :binary="true")     
 
-    .p-field
-        PrimeFileUpload(v-if="eventInfo.top" name='image',:customUpload="true" @uploader="uploadImage"  @select="onSelectEvent" :multiple='false', accept='image/*', :maxfilesize='1000000')
-          template(#empty='')
-            p Drag and drop files to here to upload    
+//-     .p-field
+//-         PrimeFileUpload(v-if="eventInfo.top" name='image',:customUpload="true" @uploader="uploadImage"  @select="onSelectEvent" :multiple='false', accept='image/*', :maxfilesize='1000000')
+//-           template(#empty='')
+//-             p Drag and drop files to here to upload    
 
 
-//- PrimeDialog.p-fluid(v-model:visible='display', :style="{width: '450px'}", header='PODCAST', :modal='true')
-//-       .p-field
-//-           PrimeLabel(for='') Dj/Promoter
-//-           PrimeInputText#name(v-model.trim='podcastInfo.name', required='true', autofocus='')
-//-           small.p-error() Name is required.
-//-       .p-field 
-//-          PrimeLabel(for='') Soundcloud 
-//-          PrimeTextArea#mix(v-model='podcastInfo.mix', required='true', rows='30', cols='20')    
-//-       .p-field
-//-           PrimeLabel(for='') Interview
-//-           PrimeTextArea#interview(v-model='podcastInfo.interview', required='true', rows='30', cols='20')
-//-       //- .p-field
-//-       //-     PrimeLabel(for='') FB link
-//-       //-     PrimeInputText#fblink(v-model='eventInfo.fb', required='true', autofocus='')
-//-       //- .p-field
-//-       //-     PrimeLabel(for="") Club
-//-       //-     PrimeDropDown(v-model="eventInfo.club" :options="state.clubs" optionLabel="name")
-//-       //- .p-field
-//-       //-     PrimeLabel(for="icon") From
-//-       //-     PrimeCalendar#icon(v-model="eventInfo.from", :showIcon="true")
-//-       //-     PrimeLabel(for="icon") To
-//-       //-     PrimeCalendar#icon(v-model="eventInfo.to", :showIcon="true")
+PrimeDialog.p-fluid(v-model:visible='display', :style="{width: '450px'}", header='PODCAST', :modal='true')
+      .p-field
+          PrimeLabel(for='') Dj/Promoter
+          PrimeInputText#name(v-model.trim='podcastInfo.name', required='true', autofocus='')
+          small.p-error() Name is required.
+      .p-field 
+         PrimeLabel(for='') Soundcloud 
+         PrimeTextArea#mix(v-model='podcastInfo.mix', required='true', rows='30', cols='20')    
+      .p-field
+          PrimeLabel(for='') Interview
+          PrimeTextArea#interview(v-model='podcastInfo.interview', required='true', rows='30', cols='20')
+          
+      //- .p-field
+      //-     PrimeLabel(for='') FB link
+      //-     PrimeInputText#fblink(v-model='eventInfo.fb', required='true', autofocus='')
+      //- .p-field
+      //-     PrimeLabel(for="") Club
+      //-     PrimeDropDown(v-model="eventInfo.club" :options="state.clubs" optionLabel="name")
+      //- .p-field
+      //-     PrimeLabel(for="icon") From
+      //-     PrimeCalendar#icon(v-model="eventInfo.from", :showIcon="true")
+      //-     PrimeLabel(for="icon") To
+      //-     PrimeCalendar#icon(v-model="eventInfo.to", :showIcon="true")
 
-//-       .p-field
-//-           PrimeFileUpload(name='image',:customUpload="true" @uploader="uploadPodcast"  @select="" :multiple='true', accept='image/*', :maxfilesize='1000000')
-//-               template(#empty='')
-//-                   p Drag and drop files to here to upload
-//-       .p-field
-//-           p {{podcastInfo}}
-//-           img(:src="img")
-//-       .p-field 
-//-           PrimeLabel(for='') Order
-//-           PrimeInputText#name(v-model.trim='podcastInfo.order', required='true', autofocus='')
-//-           small.p-error() Order is required.
-//-       .p-field 
-//-           PrimeCheckBox(inputId="binary", v-model="eventInfo.top", :binary="true")     
-//-       //- .p-field
-//-       //-     PrimeFileUpload(v-if="eventInfo.top" name='image',:customUpload="true" @uploader="uploadImage"  @select="onSelectEvent" :multiple='false', accept='image/*', :maxfilesize='1000000')
-//-       //-       template(#empty='')
-//-       //-         p Drag and drop files to here to upload  
+      .p-field
+          PrimeFileUpload(name='image',:customUpload="true" @uploader="uploadPodcast"  @select="" :multiple='true', accept='image/*', :maxfilesize='1000000')
+              template(#empty='')
+                  p Drag and drop files to here to upload
+      .p-field
+          p {{podcastInfo}}
+          img(:src="img")
+      .p-field 
+          PrimeLabel(for='') Order
+          PrimeInputText#name(v-model.trim='podcastInfo.order', required='true', autofocus='')
+          small.p-error() Order is required.
+      .p-field 
+          PrimeCheckBox(inputId="binary", v-model="eventInfo.top", :binary="true")     
+      //- .p-field
+      //-     PrimeFileUpload(v-if="eventInfo.top" name='image',:customUpload="true" @uploader="uploadImage"  @select="onSelectEvent" :multiple='false', accept='image/*', :maxfilesize='1000000')
+      //-       template(#empty='')
+      //-         p Drag and drop files to here to upload  
 
 
 </template>
@@ -135,7 +136,7 @@ import ObjectID from "bson-objectid";
 
 // as any)._.flatten();
 export default defineComponent({
-  name: "AdminViewHomeEvent",
+  name: "AdminViewHomePodcast",
   components: {
     LayoutDefault,
   },
