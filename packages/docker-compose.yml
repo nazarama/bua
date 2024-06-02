@@ -9,7 +9,7 @@ services:
   mongo:
     build: ./mongo
     ports:
-      - 27017:27017
+      - 127.0.0.1:27017:27017
     networks:
       - mynetwork
   server:
