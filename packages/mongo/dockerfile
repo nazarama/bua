@@ -12,3 +12,25 @@ EXPOSE 27017
 
 # Boot the container, run MongoDB
 CMD ["mongod"]
+
+
+# # Use the official Mongo docker image as base image
+# FROM mongo:latest
+
+# # Making a directory where MongoDB will store its files
+# RUN mkdir -p /data/db
+
+# # Update the package lists
+# RUN apt-get update
+
+# # Install MongoDB shell
+# RUN apt-get install -y mongodb-org-shell
+
+# # Making that directory the data directory for MongoDB
+# ENV MONGO_DATA_DIR=/data/db
+
+# # MongoDB's connection port
+# EXPOSE 27017
+
+# # Boot the container, run MongoDB
+# CMD ["mongod"]
