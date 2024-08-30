@@ -8,7 +8,7 @@ services:
     networks:
       - mynetwork
     volumes:
-      - ./nginx/conf/:/etc/nginx/conf.d/:ro  
+      - ./nginx/conf/:/etc/nginx/conf.d/:rw
       - ./certbot/www:/var/www/certbot/:ro
   mongo:
     build: ./mongo
