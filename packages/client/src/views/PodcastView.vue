@@ -7,47 +7,43 @@
       p.white-text-content
         p.podcast_name {{ state.podcast.name}}
         div(v-html="state.podcast.mix")
-        | {{ state.podcast.interview}}
+        div(v-html="state.podcast.interview")
 </template>
 
-  
 <script lang="ts">
-import axios from 'axios';
-import { defineComponent, onMounted, ref } from 'vue';
-import state from '../state';
+import axios from "axios";
+import { defineComponent, onMounted, ref } from "vue";
+import state from "../state";
 
 export default defineComponent({
   components: {
-  state,
-},
-  name: 'PodcastView',
+    state,
+  },
+  name: "PodcastView",
   props: {
     order: {
       type: String,
       required: true,
-    }
+    },
   },
 
-setup(props) {
+  setup(props) {
+    const img = ref();
 
-  const img = ref();
-
-
-  onMounted(async () => {
+    onMounted(async () => {
       await state.fetchPodcast(props.order);
-  });
+    });
 
-  return {
-    // You need to return the ref,
-    // or it will not work.
-    state
-  };
-},
+    return {
+      // You need to return the ref,
+      // or it will not work.
+      state,
+    };
+  },
 });
 </script>
 
 <style scoped>
-
 .podcast_view {
   padding-top: 5rem;
   padding-bottom: 1.5rem;
@@ -73,7 +69,6 @@ setup(props) {
     flex: unset;
   }
 
-
   @media screen and (min-width: 768px) {
     width: 50%; /* Change width to 50% when screen width is 768 pixels or more */
   }
@@ -84,21 +79,20 @@ setup(props) {
 }
 
 .second {
-    padding-left:5rem;
-
+  padding-left: 5rem;
 
   @media screen and (min-width: 300px) {
     padding-left: 0%; /* Change width to 33.33% when screen width is 1200 pixels or more */
   }
 
-    @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     padding-left: 0%; /* Change width to 50% when screen width is 768 pixels or more */
-   }
+  }
 
   @media screen and (min-width: 1200px) {
     padding-left: 5rem; /* Change width to 33.33% when screen width is 1200 pixels or more */
   }
-  }
+}
 
 .podcast_name {
   color: #ff3d00;
@@ -115,15 +109,14 @@ setup(props) {
     border: 0px;
   }
 
-    @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     padding-left: 0%; /* Change width to 50% when screen width is 768 pixels or more */
     border: 1px solid #ddd;
-   }
+  }
 
   @media screen and (min-width: 1200px) {
     padding-left: 1rem; /* Change width to 33.33% when screen width is 1200 pixels or more */
     border: 1px solid #ddd;
   }
 }
-
 </style>
