@@ -5,15 +5,15 @@ div
       PrimeProgressSpinner(v-if="loadingDelay" style="width: 150px; height: 150px; position:absolute; z-index:9999;   top: 45%; left: 45%;",strokeWidth="2", animationDuration=".8s")
       div(v-if="state.isReady") 
         CompGallery(:images="state.tops")   
-  section#one
+  section#one(v-if="state.resultForEvents.length > 0") 
       ViewEvents
   section#two 
       //- h2.section-header EVENTS
       ViewPodcasts
-  section#three 
-      h2.section-tittle(style="background:#FEFDFF") EVENT MAP
-        CompFilter(:clubs="state.clubs") 
-      ClubsMap.test(:color="mapColor" :center="{lat: state.center.lat, lng: state.center.lng}" :markers="state.resultForMap")
+  section#three
+      .p(style="  writing-mode: vertical-rl;text-orientation: upright; position:absolute; font-size: 70px; text-align: center; padding-top: 10%;z-index:2;color:  #5a5a5a")  MAP
+      CompFilter(:clubs="state.clubs" style="z-index:9999; ;padding-top: 5%;") 
+      ClubsMap(:color="mapColor" :center="{lat: state.center.lat, lng: state.center.lng}" :markers="state.resultForMap")
   section#five 
       //- h2.section-header US
       ViewAbout
@@ -259,14 +259,14 @@ section {
 }
 
 #one {
-  background: #fffffb;
+  background: #5a5a5a;
   color: #00c89b;
   // padding-top: 60px;
   text-align: center;
   font-size: 70px;
 }
 #two {
-  background: #212121;
+  background: #5a5a5a;
   color: #ebebeb;
   // padding-top: 60px;
   text-align: center;
@@ -321,3 +321,4 @@ section {
   align-items: center; /* Center content vertically */
 }
 </style>
+-->
