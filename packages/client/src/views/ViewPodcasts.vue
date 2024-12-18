@@ -67,7 +67,7 @@ export default defineComponent({
     onMounted(async () => {
       findRows(screenSize.value);
       await state.fetchPodcasts();
-      await state.fetchPodcastsPage(first.value, rows.value);
+      await state.fetchPodcastsPage(first.value.toString(), rows.value.toString());
       loading.value = false;
 
       window.addEventListener("resize", updateScreenSize);
@@ -114,6 +114,7 @@ export default defineComponent({
 
 .horizontal-scroller-container {
   position: relative;
+  padding-left: 10%;
   width: 90%; /* Make the scroller smaller */
   max-width: 2000px; /* Limit maximum width */
   margin: 0 auto; /* Center the scroller */
@@ -217,25 +218,27 @@ export default defineComponent({
   writing-mode: vertical-rl;
   text-orientation: upright;
   position: absolute;
-  font-size: 5vw; /* Adjust font size relative to viewport width */
+  font-size: 3vw; /* Adjust font size relative to viewport width */
   text-align: center;
   padding-top: 10%;
   color: #ebebeb;
   white-space: nowrap; /* Prevent wrapping of text */
   z-index: 1;
+  padding-left: 8%;
+  padding-right: 8%;
 }
 
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
   .podcast-text {
-    font-size: 6vw; /* Slightly larger font for smaller screens */
+    font-size: 2.5vw; /* Slightly larger font for smaller screens */
     padding-top: 10%; /* Adjust padding for better layout */
   }
 }
 
 @media (max-width: 480px) {
   .podcast-text {
-    font-size: 8vw; /* Even larger font for very small screens */
+    font-size: 4vw; /* Even larger font for very small screens */
     padding-top: 15%; /* Further adjustment for padding */
   }
 }

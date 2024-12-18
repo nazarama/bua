@@ -3,6 +3,7 @@
 //-     CompFilter(:clubs="state.clubs" style="position: sticky;top: 0;")
 //-div.section-header
 //-h2(style="padding-top:0.5%")
+div(style="padding-left:8% ;padding-right:8%; ")
 .event-text EVENTS
 .screen_events
   table
@@ -89,7 +90,7 @@ export default defineComponent({
   // background:#27262a;
   font-size: small;
   p {
-    font-size: 24px;
+    font-size: 18px;
     color: #545357;
   }
 }
@@ -164,9 +165,11 @@ $grid-gutter: 1px;
   writing-mode: vertical-rl;
   text-orientation: upright;
   position: absolute;
-  font-size: 5vw; /* Adjust font size relative to viewport width */
+  font-size: 3vw; /* Adjust font size relative to viewport width */
   text-align: center;
   padding-top: 8%;
+  padding-left: 8%;
+  padding-right: 8;
   color: #ebebeb;
   white-space: nowrap; /* Prevent wrapping of text */
 }
