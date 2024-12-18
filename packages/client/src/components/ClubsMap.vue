@@ -2,7 +2,7 @@
 <template lang="pug">
 GMapMap(:center="{lat: center.lat, lng: center.lng}"
     :zoom="15"
-    style="width: 100%; height: 85%; position: absolute" ref="myMapRef" :disableDefaultUI="true" :options="option")
+    style="width: 100%; height: 65%; position: absolute" ref="myMapRef" :disableDefaultUI="true" :options="option")
     GMapMarker(
             :position="m.position"
             :clickable="true"
@@ -50,8 +50,7 @@ function f(x: Color) {
           {
             color: "#212121",
           },
-        ], 
-
+        ],
       },
       {
         elementType: "labels.icon",
@@ -388,13 +387,7 @@ function f(x: Color) {
   }
 }
 function fixDate(d: Date) {
-  return (
-    moment(d).format("ddd") +
-    "." +
-    moment(d).format("DD") +
-    " " +
-    moment(d).format("MMM")
-  );
+  return moment(d).format("ddd") + "." + moment(d).format("DD") + " " + moment(d).format("MMM");
 }
 interface IPosition {
   lat: number;
@@ -439,7 +432,7 @@ export default defineComponent({
   },
   methods: {
     openMarker(id: number) {
-      console.log('id',id)
+      console.log("id", id);
       if (this.openedMarkerID === id) {
         this.openedMarkerID = 0;
       } else {
@@ -453,8 +446,7 @@ export default defineComponent({
     // }
     makeIconLink(name: string): any {
       // "{ url: require('../assets/clubs/FUHAicon.png')}";
-      const link: any =
-        "../assets/clubs/" + name.replace(/\s/g, "") + "icon.png";
+      const link: any = "../assets/clubs/" + name.replace(/\s/g, "") + "icon.png";
       // if (fs.exists(link)) {
       //   console.log("IKONA NEEXISTUJE");
       // }
@@ -505,7 +497,7 @@ export default defineComponent({
   font-weight: bold;
 }
 .p-datatable.p-datatable-sm .p-datatable-tbody > tr > td {
-    padding: 0;
+  padding: 0;
 }
 .p-datatable .p-datatable-tbody > tr > td {
   background: #b8b8b8;
@@ -523,20 +515,23 @@ export default defineComponent({
 .p-paginator {
   background: transparent;
 }
-.p-paginator .p-paginator-first, .p-paginator .p-paginator-prev, .p-paginator .p-paginator-next, .p-paginator .p-paginator-last {
-    background-color: #00c89b;
-    border: 0 none;
-    color: #27262a;
-    // color:  rgba(5, 5, 5, 0.6);
-    min-width: 1rem;
-    height: 1rem;
-    margin: 0.143rem;
-    transition: none;
-    border-radius: 30%;
+.p-paginator .p-paginator-first,
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next,
+.p-paginator .p-paginator-last {
+  background-color: #00c89b;
+  border: 0 none;
+  color: #27262a;
+  // color:  rgba(5, 5, 5, 0.6);
+  min-width: 1rem;
+  height: 1rem;
+  margin: 0.143rem;
+  transition: none;
+  border-radius: 30%;
 }
 
 .gm-style .gm-style-iw-tc {
-  filter: drop-shadow(0 4px 2px rgba(178,178,178,.4));
+  filter: drop-shadow(0 4px 2px rgba(178, 178, 178, 0.4));
   left: 0;
   position: absolute;
   top: 0;
@@ -555,4 +550,3 @@ export default defineComponent({
 <!--:icon="'https://developers.google.com/maps/documentation/javascript/examples/full/images/info-i_maps.png'"-->
 <!--:key="index"-->
 <!--v-for="(m, index) in markersClubs")-->
-

@@ -4,7 +4,8 @@ div
 
 .screen_about 
    div
-     p .vaša predpojatá kultúrna polícia
+     p We’re a bunch of people with open hearts for music. This website grows with us.
+     p It is kinda like our way of saying a big f*** you to Facebook and all that similar wrong algoritmuses. 
 </template>
 
 <script lang="ts">
@@ -56,7 +57,7 @@ export default {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 82vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,9 +74,11 @@ export default {
   writing-mode: vertical-rl;
   text-orientation: upright;
   position: absolute;
-  font-size: 5vw; /* Adjust font size relative to viewport width */
+  font-size: 3vw; /* Adjust font size relative to viewport width */
   text-align: center;
   padding-top: 7%;
+  padding-left: 8%;
+  padding-right: 8%;
   color: #ebebeb;
   white-space: nowrap; /* Prevent wrapping of text */
 }

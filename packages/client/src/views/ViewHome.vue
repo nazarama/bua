@@ -10,13 +10,13 @@ div
   section#two 
       //- h2.section-header EVENTS
       ViewPodcasts
-  section#three
-      .p(style="  writing-mode: vertical-rl;text-orientation: upright; position:absolute; font-size: 70px; text-align: center; padding-top: 10%;z-index:2;color:  #5a5a5a")  MAP
-      CompFilter(:clubs="state.clubs" style="z-index:9999; ;padding-top: 5%;") 
-      ClubsMap(:color="mapColor" :center="{lat: state.center.lat, lng: state.center.lng}" :markers="state.resultForMap")
-  section#five 
-      //- h2.section-header US
+  section#three(v-if="false")
       ViewAbout
+  section#five
+      //- h2.section-header US
+      //- .p(style="   position:absolute; font-size: 70px; text-align: center; padding-top: 10%;z-index:2;color:  #5a5a5a;padding-left: 8%;")  MAP
+      CompFilter(:clubs="state.clubs" style="z-index:9999; ;padding-top: 5%;padding-left: 8%;") 
+      ClubsMap(:color="mapColor" :center="{lat: state.center.lat, lng: state.center.lng}" :markers="state.resultForMap")
 
 footer.LayoutDefault__footer
     .row  
@@ -255,7 +255,7 @@ section {
 }
 
 #zero {
-  background: #fefdff;
+  background: #5a5a5a;
 }
 
 #one {
@@ -263,7 +263,6 @@ section {
   color: #00c89b;
   // padding-top: 60px;
   text-align: center;
-  font-size: 70px;
 }
 #two {
   background: #5a5a5a;
@@ -287,7 +286,7 @@ section {
   font-size: 70px;
 }
 #five {
-  background: #5a5a5a;
+  background: black;
   color: #5a5a5a;
   // padding-top: 60px;
   text-align: center;

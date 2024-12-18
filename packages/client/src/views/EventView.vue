@@ -145,7 +145,7 @@ export default defineComponent({
 
 /* Define a class for the large font size */
 .big-text {
-  font-size: 4rem; /* Adjust the size as needed */
+  font-size: 3rem; /* Adjust the size as needed */
   display: block !important;
   color: white;
 }
@@ -153,7 +153,7 @@ export default defineComponent({
 /* Optional: Make the text responsive */
 @media screen and (max-width: 600px) {
   .big-text {
-    font-size: 3.1rem; /* Adjust the size for smaller screens */
+    font-size: 2.5rem; /* Adjust the size for smaller screens */
     color: white;
   }
 }
@@ -225,13 +225,12 @@ export default defineComponent({
 }
 
 .event_name {
-  color: #ff3d00;
-  font-size: 5pc;
+  font-size: 3pc;
 }
 /* Optional: Make the text responsive */
 @media screen and (max-width: 600px) {
   .event_name {
-    font-size: 3.3rem;
+    font-size: 2.3rem;
   }
 }
 
