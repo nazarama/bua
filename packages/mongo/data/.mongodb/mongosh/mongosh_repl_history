@@ -1,0 +1,27 @@
+db.clubmodels.find()
+db.clubmodels.insertOne({"name": "WAX", "address": "Štúrova 3, 811 01 Bratislava","position": {"lat": 48.143687196990356, "lng": 17.113372827921044},"event": [], "icon":"WAX.png"})
+db.clubmodels.insertOne({"name": "FUGA", "address": "Námestie SNP 24, 811 01 Bratislava","position": {"lat": 48.1446473916946,"lng": 17.1121549423383},"event": [], "icon":"FUGA.png"})
+db.clubmodels.insertOne( {"name": "SUBDECK", "address": "Tyršovo nábrežie, 851 01 Bratislava-Petržalka", "position": { lat:48.136933314107374, lng:17.115584408777007}  ,"event": [], "icon":"SUBDECK.png"} )
+show collections
+use prod
+db.clubmodels.find()
+db.clubmodels.showAll({})
+use default
+show databases
+exit
+show databases
+show db
+exit
+db.clubmodels.find()
+db.clubmodels.selectAll()
+db.clubmodels.selectAll
+db.clubmodels.showAll({})
+show collections
+use default
+ude default
+show dbs
+db.clubmodels.insertOne({"name": "WAX", "address": "Štúrova 3, 811 01 Bratislava","position": {"lat": 48.143687196990356, "lng": 17.113372827921044},"event": [], "icon":"WAX.png"})
+db.clubmodels.insertOne({"name": "FUGA", "address": "Námestie SNP 24, 811 01 Bratislava","position": {"lat": 48.1446473916946,"lng": 17.1121549423383},"event": [], "icon":"FUGA.png"})
+db.clubmodels.insertOne( {"name": "SUBDECK", "address": "Tyršovo nábrežie, 851 01 Bratislava-Petržalka", "position": { lat:48.136933314107374, lng:17.115584408777007}  ,"event": [], "icon":"SUBDECK.png"} )
+use default
+show dbs
