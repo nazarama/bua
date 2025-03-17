@@ -51,7 +51,7 @@ export default defineComponent({
 
     const rowsData = computed(() => {
       const podcasts = state.resultForPodcastsPage || [];
-      const half = Math.ceil(podcasts.length / 2); // Split into two rows
+      const half = Math.ceil(podcasts.length / 2); // Split into 2 rows
       return [podcasts.slice(0, half), podcasts.slice(half)];
     });
 
@@ -110,6 +110,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   width: 100vw;
+  background-color: #5a5a5a;
 }
 
 .horizontal-scroller-container {

@@ -1,26 +1,26 @@
 <template lang="pug">  
-div
-  //- stickyEvents   
-  section#zero
-      PrimeProgressSpinner(v-if="loadingDelay" style="width: 150px; height: 150px; position:absolute; z-index:9999;   top: 45%; left: 45%;",strokeWidth="2", animationDuration=".8s")
-      div(v-if="state.isReady") 
-        CompGallery(:images="state.tops")   
-  section#one(v-if="state.resultForEvents.length > 0") 
-      ViewEvents
-  section#two 
-      //- h2.section-header EVENTS
-      ViewPodcasts
-  section#three(v-if="false")
-      ViewAbout
-  section#five
-      //- h2.section-header US
-      //- .p(style="   position:absolute; font-size: 70px; text-align: center; padding-top: 10%;z-index:2;color:  #5a5a5a;padding-left: 8%;")  MAP
-      CompFilter(:clubs="state.clubs" style="z-index:9999; ;padding-top: 5%;padding-left: 8%;") 
-      ClubsMap(:color="mapColor" :center="{lat: state.center.lat, lng: state.center.lng}" :markers="state.resultForMap")
+//- stickyEvents   
+section#zero
+    PrimeProgressSpinner(v-if="loadingDelay" style="width: 150px; height: 150px; position:absolute; z-index:9999;   top: 45%; left: 45%;",strokeWidth="2", animationDuration=".8s")
+    div(v-if="state.isReady") 
+      CompGallery(:images="state.tops")   
+section#one(v-if="state.resultForEvents.length > 0") 
+    ViewEvents
+section#two 
+    //- h2.section-header EVENTS
+    ViewPodcasts
+section#three(v-if="false")
+    ViewAbout
+section#five
+    //- h2.section-header US
+    //- .p(style="   position:absolute; font-size: 70px; text-align: center; padding-top: 10%;z-index:2;color:  #5a5a5a;padding-left: 8%;")  MAP
+    div(style="color:black; margin-top:5%")
+    CompFilter(:clubs="state.clubs" style="z-index:2; ;padding-top: 5%;padding-left: 8%;") 
+    ClubsMap(:color="mapColor" :center="{lat: state.center.lat, lng: state.center.lng}" :markers="state.resultForMap")
 
 footer.LayoutDefault__footer
     .row  
-       .column(style="padding-left:2.5%;justify-content: left;") @2023 Bratislava Undeground ADVISOR, good stuff only!
+       .column(style="padding-left:2.5%;justify-content: left;") @2025 Bratislava Undeground ADVISOR, good stuff only!
        .column(style="padding-right:3%;justify-content: right;") Made by NAZARAMA   
 </template>
 <script lang="ts">
@@ -320,4 +320,3 @@ section {
   align-items: center; /* Center content vertically */
 }
 </style>
--->

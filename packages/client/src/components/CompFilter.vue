@@ -1,5 +1,5 @@
 <template lang="pug">
-div(style="position:absolute; font-size:35pt;margin-left:1%;") filter
+div(style="position:absolute; font-size:25pt;margin-left:1%; color:#00c89b") EVENTS filter
   PrimeCalendar(v-model="selectedDateRange.value" selectionMode="range" showIcon="true")
   PrimeDropDown( v-model='selectedClub' :options='clubs' optionLabel='name' :filter='true'  :showclear='true')
 //-  floatingButton
