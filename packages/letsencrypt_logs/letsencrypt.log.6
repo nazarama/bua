@@ -1,0 +1,173 @@
+2024-09-06 11:00:59,595:DEBUG:certbot._internal.main:certbot version: 2.11.0
+2024-09-06 11:00:59,595:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/local/bin/certbot
+2024-09-06 11:00:59,596:DEBUG:certbot._internal.main:Arguments: ['--webroot', '--webroot-path', '/var/www/certbot/', '--preferred-challenges', 'http', '-d', 'qina.sk']
+2024-09-06 11:00:59,596:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2024-09-06 11:00:59,615:DEBUG:certbot._internal.log:Root logging level set at 30
+2024-09-06 11:00:59,617:DEBUG:certbot._internal.plugins.selection:Requested authenticator webroot and installer None
+2024-09-06 11:00:59,617:DEBUG:certbot._internal.plugins.selection:Single candidate plugin: * webroot
+Description: Saves the necessary validation files to a .well-known/acme-challenge/ directory within the nominated webroot path. A seperate HTTP server must be running and serving files from the webroot path. HTTP challenge only (wildcards not supported).
+Interfaces: Authenticator, Plugin
+Entry point: EntryPoint(name='webroot', value='certbot._internal.plugins.webroot:Authenticator', group='certbot.plugins')
+Initialized: <certbot._internal.plugins.webroot.Authenticator object at 0x7f9e53427080>
+Prep: True
+2024-09-06 11:00:59,618:DEBUG:certbot._internal.plugins.selection:Selected authenticator <certbot._internal.plugins.webroot.Authenticator object at 0x7f9e53427080> and installer None
+2024-09-06 11:00:59,618:INFO:certbot._internal.plugins.selection:Plugins selected: Authenticator webroot, Installer None
+2024-09-06 11:00:59,684:DEBUG:certbot._internal.main:Picked account: <Account(RegistrationResource(body=Registration(key=None, contact=(), agreement=None, status=None, terms_of_service_agreed=None, only_return_existing=None, external_account_binding=None), uri='https://acme-v02.api.letsencrypt.org/acme/acct/1920151726', new_authzr_uri=None, terms_of_service=None), 567e5224aa8c5796de269695613773d3, Meta(creation_dt=datetime.datetime(2024, 8, 30, 22, 23, 46, tzinfo=<UTC>), creation_host='b1ef6c74a8f9', register_to_eff='nazarama@protonmail.com'))>
+2024-09-06 11:00:59,685:DEBUG:acme.client:Sending GET request to https://acme-v02.api.letsencrypt.org/directory.
+2024-09-06 11:00:59,688:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): acme-v02.api.letsencrypt.org:443
+2024-09-06 11:00:59,849:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "GET /directory HTTP/1.1" 200 746
+2024-09-06 11:00:59,850:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Fri, 06 Sep 2024 11:00:59 GMT
+Content-Type: application/json
+Content-Length: 746
+Connection: keep-alive
+Cache-Control: public, max-age=0, no-cache
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "538LJJhjmTs": "https://community.letsencrypt.org/t/adding-random-entries-to-the-directory/33417",
+  "keyChange": "https://acme-v02.api.letsencrypt.org/acme/key-change",
+  "meta": {
+    "caaIdentities": [
+      "letsencrypt.org"
+    ],
+    "termsOfService": "https://letsencrypt.org/documents/LE-SA-v1.4-April-3-2024.pdf",
+    "website": "https://letsencrypt.org"
+  },
+  "newAccount": "https://acme-v02.api.letsencrypt.org/acme/new-acct",
+  "newNonce": "https://acme-v02.api.letsencrypt.org/acme/new-nonce",
+  "newOrder": "https://acme-v02.api.letsencrypt.org/acme/new-order",
+  "renewalInfo": "https://acme-v02.api.letsencrypt.org/draft-ietf-acme-ari-03/renewalInfo",
+  "revokeCert": "https://acme-v02.api.letsencrypt.org/acme/revoke-cert"
+}
+2024-09-06 11:00:59,851:DEBUG:certbot._internal.display.obj:Notifying user: Requesting a certificate for qina.sk
+2024-09-06 11:00:59,859:DEBUG:acme.client:Requesting fresh nonce
+2024-09-06 11:00:59,859:DEBUG:acme.client:Sending HEAD request to https://acme-v02.api.letsencrypt.org/acme/new-nonce.
+2024-09-06 11:00:59,912:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "HEAD /acme/new-nonce HTTP/1.1" 200 0
+2024-09-06 11:00:59,913:DEBUG:acme.client:Received response:
+HTTP 200
+Server: nginx
+Date: Fri, 06 Sep 2024 11:00:59 GMT
+Connection: keep-alive
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+Replay-Nonce: UAMvsxnw02b0HSCWCr4bZmoXB4YeMZVIq-OUp5KhRZKjRABH5Hk
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+
+2024-09-06 11:00:59,913:DEBUG:acme.client:Storing nonce: UAMvsxnw02b0HSCWCr4bZmoXB4YeMZVIq-OUp5KhRZKjRABH5Hk
+2024-09-06 11:00:59,914:DEBUG:acme.client:JWS payload:
+b'{\n  "identifiers": [\n    {\n      "type": "dns",\n      "value": "qina.sk"\n    }\n  ]\n}'
+2024-09-06 11:00:59,917:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/new-order:
+{
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTkyMDE1MTcyNiIsICJub25jZSI6ICJVQU12c3hudzAyYjBIU0NXQ3I0Ylptb1hCNFllTVpWSXEtT1VwNUtoUlpLalJBQkg1SGsiLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL25ldy1vcmRlciJ9",
+  "signature": "DXFnrG3brn1Li40VZnqie4WuOaur0LHp0wWi2KNGCCylo6BS9mnnnAwjrPTEJx1OfKR7CHm5Na1S9f8RVU4MdtyN4kyo_a42Q0I1AtwrAmMuG36QeajuDcPS8osl2s7-91GR-tXtV2GLm4rKLUGXz-S-Zk-R6LFgnh3CC3725Z7gqYgAfFoE2sAApsZ0ocYJqGNhxtZTw6An0xLofKbgzJ_KiJ8hEkY4cnoeiv1lTcUlhnxRFdFu1FOzSuuuFDDDPSc7sT1u2Y5_uYdowiTGuar73zIIa_Ma1v5coTVlxcVxObPHQBrhRY7cjkDVgq55dEBH9EnrGCXVQtEAPxCJTg",
+  "payload": "ewogICJpZGVudGlmaWVycyI6IFsKICAgIHsKICAgICAgInR5cGUiOiAiZG5zIiwKICAgICAgInZhbHVlIjogInFpbmEuc2siCiAgICB9CiAgXQp9"
+}
+2024-09-06 11:01:00,029:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/new-order HTTP/1.1" 201 333
+2024-09-06 11:01:00,030:DEBUG:acme.client:Received response:
+HTTP 201
+Server: nginx
+Date: Fri, 06 Sep 2024 11:01:00 GMT
+Content-Type: application/json
+Content-Length: 333
+Connection: keep-alive
+Boulder-Requester: 1920151726
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+Location: https://acme-v02.api.letsencrypt.org/acme/order/1920151726/302781636056
+Replay-Nonce: 0Nvv4YStWZpx-Bp5uI2XCDEdwEcYULC6kqoLXRqc6imJo2aLKfo
+X-Frame-Options: DENY
+Strict-Transport-Security: max-age=604800
+
+{
+  "status": "pending",
+  "expires": "2024-09-13T11:00:59Z",
+  "identifiers": [
+    {
+      "type": "dns",
+      "value": "qina.sk"
+    }
+  ],
+  "authorizations": [
+    "https://acme-v02.api.letsencrypt.org/acme/authz-v3/400072411646"
+  ],
+  "finalize": "https://acme-v02.api.letsencrypt.org/acme/finalize/1920151726/302781636056"
+}
+2024-09-06 11:01:00,031:DEBUG:acme.client:Storing nonce: 0Nvv4YStWZpx-Bp5uI2XCDEdwEcYULC6kqoLXRqc6imJo2aLKfo
+2024-09-06 11:01:00,031:DEBUG:acme.client:JWS payload:
+b''
+2024-09-06 11:01:00,033:DEBUG:acme.client:Sending POST request to https://acme-v02.api.letsencrypt.org/acme/authz-v3/400072411646:
+{
+  "protected": "eyJhbGciOiAiUlMyNTYiLCAia2lkIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2FjY3QvMTkyMDE1MTcyNiIsICJub25jZSI6ICIwTnZ2NFlTdFdacHgtQnA1dUkyWENERWR3RWNZVUxDNmtxb0xYUnFjNmltSm8yYUxLZm8iLCAidXJsIjogImh0dHBzOi8vYWNtZS12MDIuYXBpLmxldHNlbmNyeXB0Lm9yZy9hY21lL2F1dGh6LXYzLzQwMDA3MjQxMTY0NiJ9",
+  "signature": "iabBKWsmp4s5oOvyDQ-e8FgxOAc43OsudtqQMJm1l1NIZE99ixn2E-MXjOrMrzr1sDUM02mG_2gKl74aBRKWeyVoMJzl3B1Yy8mDEvXySuKueZJ7G8sgpj96gV5PoItLd9WgJxlM-N7oyh7O_paJ0iDW9H2d4hm5jCjSlVMa7rF9oW2InC6Z-M3jHmMa6dCwfQMAscBCk5wMc6fJubaacsgpr_8sdbK3iopQK8wFLbDDSSVCDOuxPZxQjOGRMcelWJ2l-I_zdPFRHgEb2R8oM7sLmx5uZWKd7mKrjYollNjLGmijOnyJVrJuTWL1APqQq3rHKEZ6Bg73MMRlXXY6kA",
+  "payload": ""
+}
+2024-09-06 11:01:00,089:DEBUG:urllib3.connectionpool:https://acme-v02.api.letsencrypt.org:443 "POST /acme/authz-v3/400072411646 HTTP/1.1" 404 106
+2024-09-06 11:01:00,090:DEBUG:acme.client:Received response:
+HTTP 404
+Server: nginx
+Date: Fri, 06 Sep 2024 11:01:00 GMT
+Content-Type: application/problem+json
+Content-Length: 106
+Connection: keep-alive
+Boulder-Requester: 1920151726
+Cache-Control: public, max-age=0, no-cache
+Link: <https://acme-v02.api.letsencrypt.org/directory>;rel="index"
+Replay-Nonce: 0Nvv4YStM4zmpux_Z-oGysTi3_6tFvdiN_MRQOehDorn2GzexoU
+
+{
+  "type": "urn:ietf:params:acme:error:malformed",
+  "detail": "No such authorization",
+  "status": 404
+}
+2024-09-06 11:01:00,091:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/local/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/certbot/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/certbot/certbot/_internal/main.py", line 1894, in main
+    return config.func(config, plugins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/certbot/certbot/_internal/main.py", line 1600, in certonly
+    lineage = _get_and_save_cert(le_client, config, domains, certname, lineage)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/certbot/certbot/_internal/main.py", line 143, in _get_and_save_cert
+    lineage = le_client.obtain_and_enroll_certificate(domains, certname)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/certbot/certbot/_internal/client.py", line 517, in obtain_and_enroll_certificate
+    cert, chain, key, _ = self.obtain_certificate(domains)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/certbot/certbot/_internal/client.py", line 428, in obtain_certificate
+    orderr = self._get_order_and_authorizations(csr.data, self.config.allow_subset_of_names)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/certbot/certbot/_internal/client.py", line 478, in _get_order_and_authorizations
+    orderr = self.acme.new_order(csr_pem)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/acme/acme/client.py", line 144, in new_order
+    authorizations.append(self._authzr_from_response(self._post_as_get(url), uri=url))
+                                                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/acme/acme/client.py", line 304, in _post_as_get
+    return self._post(*new_args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/acme/acme/client.py", line 365, in _post
+    return self.net.post(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/acme/acme/client.py", line 738, in post
+    return self._post_once(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/acme/acme/client.py", line 751, in _post_once
+    response = self._check_response(response, content_type=content_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/certbot/src/acme/acme/client.py", line 602, in _check_response
+    raise messages.Error.from_json(jobj)
+acme.messages.Error: urn:ietf:params:acme:error:malformed :: The request message was malformed :: No such authorization
+2024-09-06 11:01:00,095:ERROR:certbot._internal.log:An unexpected error occurred:
+2024-09-06 11:01:00,095:ERROR:certbot._internal.log:No such authorization
