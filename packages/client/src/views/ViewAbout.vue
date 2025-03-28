@@ -3,9 +3,10 @@ div
  .about-text  ABOUT
 
 .screen_about 
-   div
-     p We’re a bunch of people with open hearts for music. This website grows with us.
-     p It is kinda like our way of saying a big f*** you to Facebook and all that similar wrong algoritmuses. 
+   .text
+    p We're a group of people with open hearts for music. This website grows with us.
+    p It's our way of giving a big f*** you to Facebook and all the other messed-up algorithms out there.
+    p(style="color:white;") &#10084;
 </template>
 
 <script lang="ts">
@@ -24,6 +25,35 @@ export default {
 //   background:#00c89b;
 //   h2 { z-index: 0;}
 // }
+
+.text {
+  padding-top: 30%;
+  padding-left: 20%;
+  padding-right: 20%;
+  font-size: 3.5pc;
+  color: #00c89b;
+}
+/* Optional: Make the text responsive */
+@media screen and (max-width: 375px) {
+  .text {
+    padding-top: 50%;
+    font-size: 0.3pc;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .text {
+    padding-top: 50%;
+    font-size: 1.3pc;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .text {
+    padding-top: 20%;
+    font-size: 1.3pc;
+  }
+}
+
 .section-title {
   writing-mode: vertical-rl; /* Makes text vertical */
   text-orientation: upright; /* Ensures letters are not rotated */
@@ -65,8 +95,8 @@ export default {
 
   p {
     text-align: center;
-    color: #afafaf;
-    font-size: 18px;
+    // color: #afafaf;
+    // font-size: 18px;
   }
 }
 
